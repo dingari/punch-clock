@@ -19,9 +19,9 @@ pip3 install --upgrade oauth2client
 
 * In the directory, create a file `sheet_key.py` containing only `key = <key_from_your_spreadsheet_url_here>`. Will later change this to a config file or a command line parameter.
 
-* Create a symlink to `punch_clock.py` named `/usr/bin/punch-clock` or otherwise arrange it so that running `punch-clock` from a terminal results in running the program.
+* Create a symlink to `punch_clock.py` named `/usr/bin/punch-clock` or otherwise arrange it so that running `punch-clock` from a terminal results in running the program. This is done for added convenience as the script may be executed from another directory.
 
-* Copy `lock_unlock_monitor.sh` script to `/etc/init.d/lock-unlock-monitor.sh` to run it on every boot (make sure it has execute permission). It will monitor desktop lock/unlock events.
+* Make sure `lock_unlock_monitor.sh` has permission to execute. Either run it manually or configure it to run automatically. It will monitor desktop lock/unlock events and invoke the python script. The bash script will run indefinitely so it may be a good idea to background it using an apersend (e.g. `./lock_unlock_monitor.sh &`).
 
 ## TODO:
 

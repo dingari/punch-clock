@@ -43,7 +43,6 @@ def round_to_nearest_quarter(date_time):
 
 def punch_in_out(action):
     punch_time = datetime.now();
-    print(action, punch_time);
 
     date_str = '{}. {}'.format(punch_time.day, punch_time.strftime('%b'));
 
@@ -71,9 +70,6 @@ def punch_in_out(action):
 
             if(last_out_time < punch_time):
                 sheet.update_cell(target_cell.row, target_cell.col, timestamp_str);
-
-    else:
-        print("Invalid action: {}", action);
 
 if __name__ == '__main__':
 
